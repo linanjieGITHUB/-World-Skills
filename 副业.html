@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <script src="./bootstrap/js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="./css/nav2.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+
+    <script src="js/classie.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="./js/animate缓慢动画.js"></script>
+    <script src="./js/jQuery.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .fxq-lll {
+            background-color: aqua;
+            position: relative;
+            top: -95px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default menu menu--iris">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+                <a class="navbar-brand" href="#"><img src="./image/img/圆2.png" alt="" height="100" class="logo"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav menu__list">
+
+                    <li>
+                        <li class="menu__item menu__item--current fxq-zy"><a href="#" class="menu__link">帅气的个人介绍---方鑫桥</a></li>
+                    </li>
+                    <!-- <li class="menu__item"><a href="#" class="menu__link">关于世锦赛</a></li>
+              <li class="menu__item fxq-jbs"><a href="#" class="menu__link">锦标赛项目</a></li>
+              <li class="menu__item"><a href="#" class="menu__link">待定333</a></li> -->
+
+                </ul>
+
+                <script>
+                    (function() {
+                        [].slice.call(document.querySelectorAll('.menu')).forEach(function(menu) {
+                            var menuItems = menu.querySelectorAll('.menu__link'),
+                                setCurrent = function(ev) {
+                                    ev.preventDefault();
+
+                                    var item = ev.target.parentNode; // li
+
+                                    // return if already current
+                                    if (classie.has(item, 'menu__item--current')) {
+                                        return false;
+                                    }
+                                    // remove current
+                                    classie.remove(menu.querySelector('.menu__item--current'), 'menu__item--current');
+                                    // set current
+                                    classie.add(item, 'menu__item--current');
+                                };
+
+                            [].slice.call(menuItems).forEach(function(el) {
+                                el.addEventListener('click', setCurrent);
+                            });
+                        });
+
+                        [].slice.call(document.querySelectorAll('.link-copy')).forEach(function(link) {
+                            link.setAttribute('data-clipboard-text', location.protocol + '//' + location.host + location.pathname + '#' + link.parentNode.id);
+                            new Clipboard(link);
+                            link.addEventListener('click', function() {
+                                classie.add(link, 'link-copy--animate');
+                                setTimeout(function() {
+                                    classie.remove(link, 'link-copy--animate');
+                                }, 300);
+                            });
+                        });
+                    })(window);
+                </script>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="menu-item current-menu-item">
+                        <a href="./index.html">
+                  首页<div class="wee"></div>
+                </a>
+
+
+                    </li>
+                    <li class="menu-item"><a href="./index/副业面.html">学习攻略</a>
+
+                    </li>
+                    <li class="dropdown menu-item click-move">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">登录/注册<span class="caret"></span></a>
+                    </li>
+                </ul>
+                <script>
+                    $(document).ready(function() {
+                        // cool nav menu
+                        $(window).on('load resize', function() {
+                            var $thisnav = $('.current-menu-item').offset().left;
+
+                            $('.menu-item').hover(function() {
+                                var $left = $(this).offset().left - $thisnav;
+                                var $width = $(this).outerWidth();
+                                var $start = 0;
+                                $('.wee').css({
+                                    'left': $left,
+                                    'width': $width
+                                });
+                            }, function() {
+                                var $initwidth = $('.current-menu-item').width();
+                                $('.wee').css({
+                                    'left': '0',
+                                    'width': $initwidth
+                                });
+                            });
+                        });
+
+                    });
+                </script>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!-- 滑动页面 -->
+    <!-- 导航栏滚动效果 -->
+    <!-- 模拟框 -->
+    <div class="fxq-occ">
+    </div>
+    <div class="fxq-fac">
+        <h3 style="font-weight:600 ;">会员登录</h3>
+        <span class="fxq-xx"><span class="glyphicon glyphicon-remove"></span></span>
+        <hr>
+        <div class="fxq-alr">
+            <h5 style="font-weight:600 ;">已注册过用户</h5>
+            <img src="./img/wx2.png" alt="" height="40" class="fxq-alr-img">
+            <input type="button" value="微信登录" class="fxq-alr-ipt">
+            <div style="text-align:center ;width: 100%; margin: 15px 0px; font-weight: 600;">或</div>
+            <div style="font-size:10px ;font-weight: 700; margin: 5px 0px;"><span style="color:rgb(255, 0, 0) ;">*</span>用户名（手机号/电子邮箱密码）</div>
+            <input type="text" style="width:100% ;height: 40px;border: 1px rgb(194, 194, 194) solid; border-radius: 5px;">
+            <div style="font-size:10px ;font-weight: 700; margin: 10px 5px 0px 0px;"><span style="color:rgb(255, 0, 0) ;">*</span>密码</div>
+            <input type="text" style="width:100% ;height: 40px;border: 1px rgb(194, 194, 194) solid; border-radius: 5px;" class="fxq-air-pass">
+            <span class="fxq-ice"><span class="glyphicon glyphicon-eye-open"></span></span>
+            <div class="fxq-jg" style="width: 100%;height: 25px;margin-top: 5px;border: 1px #333 solid;line-height: 25px;text-align: center; color: aliceblue;font-weight: 600;">密码要在于6~12个字符之间</div>
+            <a style="border-bottom:1px solid #333 ;width: 60px; font-size: 10px;margin-top: 5px;">忘记密码？</a>
+            <input type="button" value="登录" class="fxq-alr-ipt2">
+            <hr>
+            <h5 style="font-weight:600 ;">没有注册过账号？注册后你可以</h5>
+            <ul style="list-style: none; font-size: 10px;font-weight: 600;">
+                <li>查看您的观看记录</li>
+                <li>管理您的个人信息</li>
+                <li>问你想问的一切</li>
+            </ul>
+            <div class="fxq-none">
+                <div class="fxq-zc">
+                    <h3 style="font-weight:600 ;text-align: center;">注册新用户</h3>
+                    <span class="fxq-xx2"><span class="glyphicon glyphicon-remove"></span></span>
+                    <hr>
+                    <div style="font-size:10px ;font-weight: 700; margin: 5px 0px;"><span style="color:rgb(255, 0, 0) ;">*</span>用户名（手机号/电子邮箱密码）</div>
+                    <input type="text" style="width:100% ;height: 40px;border: 1px rgb(194, 194, 194) solid; border-radius: 5px;">
+                    <div style="font-size:10px ;font-weight: 700; margin: 10px 5px 0px 0px;"><span style="color:rgb(255, 0, 0) ;">*</span>密码</div>
+                    <input type="text" style="width:100% ;height: 40px;border: 1px rgb(194, 194, 194) solid; border-radius: 5px;" class="fxq-air-pass">
+                    <span class="fxq-ice2"><span class="glyphicon glyphicon-eye-open"></span></span>
+                    <div style="font-size:10px ;font-weight: 700; margin: 10px 5px 0px 0px;"><span style="color:rgb(255, 0, 0) ;">*</span>验证码</div>
+                    <input type="text" style="width:50% ;height: 40px;" class="fxq-air-pass">
+                    <input type="button" value="获得验证码" style="width:30% ;height: 40px;" class="fxq-air-yzm">
+                    <input type="button" value="确定注册" class="fxq-alr-ipt2">
+                </div>
+            </div>
+            <input type="button" value="注册" class="fxq-alr-ipt3">
+        </div>
+    </div>
+    <script>
+        var boxleft = $('.fxq-fac').offset().left;
+        // 拉抽
+        $('.click-move').click(function() {
+
+            $('.fxq-fac').animate({
+                left: boxleft - 400,
+                opacity: 1,
+            })
+            $('.fxq-occ').css('display', 'block')
+        })
+        $('.fxq-xx').click(function() {
+            $('.fxq-fac').animate({
+                left: boxleft + 400,
+                opacity: 0,
+            }, 300)
+            $('.fxq-occ').css('display', 'none')
+            $('.fxq-zc').animate({
+                top: zctop + 900,
+            }, 300)
+            $('.fxq-none').css('display', 'none')
+        })
+
+
+        var zctop = $('.fxq-zc').offset().top;
+
+        $('.fxq-alr-ipt3').click(function() {
+
+            $('.fxq-none').css('display', 'block')
+            $('.fxq-zc').animate({
+                top: zctop + 120,
+            }, 300)
+        })
+
+        $('.fxq-xx2').click(function() {
+            $('.fxq-none').css('display', 'none')
+            $('.fxq-zc').animate({
+                top: zctop + 900,
+            }, 300)
+
+        })
+
+        // 切换
+        var fxq = 0;
+        var inp = document.querySelectorAll('.fxq-air-pass')
+        $('.fxq-ice,.fxq-ice2').click(function() {
+            if (fxq == 0) {
+                $('.glyphicon-eye-open').addClass('glyphicon-eye-close').removeClass('glyphicon-eye-open')
+                inp[1].type = 'password';
+                inp[0].type = 'password';
+                fxq = 1
+            } else {
+                $('.glyphicon-eye-close').addClass('glyphicon-eye-open').removeClass('glyphicon-eye-close')
+                inp[1].type = 'text';
+                inp[0].type = 'text';
+                fxq = 0
+            }
+        })
+
+        // 警告框
+        var jg = document.querySelector('.fxq-jg')
+        inp.onblur = function() {
+            if (this.value.length < 6 || this.value.length > 16) {
+                jg.style.display = 'block'
+            } else {
+                jg.style.display = 'none'
+            }
+        }
+    </script>
+    <script>
+        $(function() {
+            $('.navbar a').stop().css('color', 'rgb(255, 255, 255)');
+
+            $(window).scroll(function() {
+                fxqtto()
+                var winTop = $(document).scrollTop()
+                    // console.log(winTop);
+                $('.navbar').css('top', winTop + 'px')
+                if (winTop == 0) {
+                    $('.navbar').stop().css('background-color', 'rgba(136, 136, 136, 0)')
+                    $('.navbar a').stop().css('color', 'rgb(255, 255, 255)');
+
+                } else {
+                    $('.navbar').stop().css('background-color', 'rgba(106, 106, 106, 0.8)')
+                    $('.navbar a').stop().css('color', 'rgb(255, 255, 255)');
+                }
+
+                function fxqtto() {
+                    var winTop = $(window).scrollTop();
+                    //    右侧导航条跟随
+                    if ($(window).scrollTop() >= 0) {
+
+                        $('.navbar').css('top', winTop + 'px');
+
+                    } else {
+
+                        $('.navbar').css('top', 0);
+
+                    }
+                }
+
+            });
+
+        })
+    </script>
+    <div class="fxq-lll">
+        <span class="fxq-dianji">点击屏幕下滑</span>
+        <br>
+        <span class="fxq-biaobiao glyphicon glyphicon-menu-down"></span>
+
+
+    </div>
+
+    <div class="ooo container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12" style="border-bottom: 1px solid #333;">
+                <h2 class="fxq-h2">个人简介</h2>
+                <br>
+                <h5 style="color: rgb(179, 179, 179);">在校时间：2020年8月 - 2022年12月</h5>
+            </div>
+        </div>
+        <!-- 个人人物 -->
+        <div class="row center">
+            <div class="col-md-12 col-xs-12">
+                <div class="fxq-banner-header">
+                    <span class="fxq-text1">FANG</span>
+                    <span class="fxq-text3">.14</span>
+                    <img src="./image/img/中.png" alt="" class="banner-img">
+
+                    <span class="fxq-text2">XinQiao</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="fxqText">
+                    Hello ，我是来自20计算机1班的实习生<span>方鑫桥</span>，在校练习时长两年半，本人喜欢唱跳rep篮球。性格开朗，活泼可爱,善解人意，185
+                </div>
+                <div class="fxqText">
+                    掌握技能：offce中级证、Photoshop中级证、网络通讯与技术中级证、JavaScript、ES6、jQuery
+                </div>
+                <br>
+                <div class="fxqText">我的个人留言是：晚上一个人偷偷流泪，真爱无敌</div>
+                <br>
+                <div class="fxqText">给人生一个梦，给梦一条路，给路一个方向；摔倒了要学会自己爬起来，受伤了要学会自己疗伤；生命仅有走出来的精彩，没有等待出来的辉煌！</div>
+                <br>
+                <div class="fxqText">没有舞台，没有观众，不要就此停止你的舞蹈，请记住，你不是为了舞台的华美而舞蹈的，也不是为了观众的掌声才存在的，他们都是外物，你要遵守的是你的心，你心中那份不朽的热爱，那份坚定不移的自我而舞动生命的美，你只要始终坚持下去，不抛弃，不放弃，总有一天你会看到心中的那份光亮！ </div>
+                <br>
+                <div class="fxqText">你不得不逼着自己更优秀，因为身后许多人等着看你的笑话。 所以要对自己狠一点，逼自己努力，再过五年你将会感谢今天发狠的自己、恨透今天懒惰自卑的自己。</div>
+                <br>
+                <div class="fxqText">无论何时，都要微笑。 微笑面对生活，微笑对待他人，微笑看待不幸。</div>
+                <br>
+                <div class="fxqText">世上唯一不能复制的是时间，唯一不能重演的是人生，该怎么走，过什么样的生活全凭自己的选择和努力，人生很贵。请别浪费。</div>
+                <br>
+                <div class="fxqText fxq-das">每一个人的成功之路或许都不尽相同，但我相信，成功都需要每一位想成功的人去努力去奋斗，而每一条成功之路，都是充满坎坷的，只有那些坚信自己目标，不断努力不断奋斗的人，才能取得最终的成功。但有一点我始终坚信，那就是，当你能把自己感动得哭了的时候，你就成功了！</div>
+                <br>
+                <div class="fxqText">
+                    <div class="fxq-fx">
+
+                        <ul class="fxq-fx-ul">
+                            <li style="padding-top: 3px;">分享到：</li>
+                            <li><img src="./image/img/wx.png" alt=""></li>
+                            <li><img src="./image/img/qq.png" alt=""></li>
+                            <li><img src="./image/img/空间.png" alt=""></li>
+                            <li><img src="./image/img/微博.png" alt=""></li>
+                            <li><img src="./image/img/联系人.png" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fxq-input container">
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <input type="text" class="banner-input" placeholder="可以给我留言哦~">
+                </div>
+            </div>
+            <div class="row center">
+                <div class="col-md-12 col-xs-12">
+                    <input type="button" class="fxq-btn" value="提交评论" style="height: 50px;width: 200px;background-color: brown;color: aliceblue;border:1px brown solid; border-radius: 30px;">
+                </div>
+            </div>
+            <div class="row fxq-pl11" style="border-bottom: 1px solid #333;padding-bottom: 10px;">
+                <div class="col-md-12 col-xs-12">
+                    <span>全部评论（<span class="nbo">0</span>条）</span>
+                </div>
+            </div>
+            <!-- 评论区 -->
+            <div class="row fxq-pl">
+                <div class="col-md-12 col-xs-12">
+                    <img src="./image/img/评论.png" alt="" height="200" class="fxq-plimg">
+                    <span class="fxq-bjpl">暂时没有评论~</span>
+                    <ul class="pl">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            //  点击评论
+            var ind = 0;
+            var nbo = document.querySelector('.nbo')
+            $('.fxq-btn').on('click', function() {
+                // 添加元素
+                var li = $('<li></li>');
+                // 给小li赋值
+                li.html("我：" + $('.banner-input').val() + '<a href="javascript:; class="remove">删除</a>');
+                // 添加小li
+                $('.pl').prepend(li);
+
+                li.slideDown();
+                $('.banner-input').val('');
+                ind += 1;
+                nbo.innerHTML = ind
+                console.log(nbo.innerHTML);
+                if ($('.pl li').length == null) {
+                    $('.fxq-plimg').stop().show()
+                    $('.fxq-bjpl').stop().show()
+                } else {
+                    $('.fxq-plimg').stop().hide()
+                    $('.fxq-bjpl').stop().hide()
+                }
+
+            });
+            $('.pl').on('click', 'a', function() {
+                $(this).parent('li').slideUp(function() {
+                    $(this).remove();
+                    var inx = $(this).parents('.fxq-pl').siblings('.fxq-pl11').children('.nbo').html()
+                    console.log(inx);
+                });
+                // console.log($(this));
+                // .parent('.fxq-pl').siblings('.fxq-pl11').children('.nbo').html()
+
+
+            })
+        </script>
+    </div>
+    <!-- 下滑镖移动 -->
+    <script>
+        Hua()
+
+        function Hua() {
+            $('.fxq-biaobiao').animate({
+                top: -10,
+                opacity: 0
+            })
+            $('.fxq-dianji').animate({
+                top: -10,
+                opacity: 0
+            })
+            $('.fxq-biaobiao').animate({
+                top: -50,
+                opacity: 1,
+                transition: 1
+            })
+            $('.fxq-dianji').animate({
+                top: -30,
+                opacity: 1,
+                transition: 1
+            })
+        }
+        setInterval("Hua()", 2000)
+
+
+        $(window).scroll(function() {
+            // Fn()
+            // function Fn(){
+            var wintop = $(window).scrollTop();
+
+            if (wintop >= 700) {
+                wintop == 700
+            } else {
+
+                $('.banner-img').css('left', wintop - 700)
+                $('.fxq-text1').css('left', wintop - 600)
+                $('.fxq-text3').css('left', wintop - 500)
+                $('.fxq-text2').css('left', 1300 - wintop)
+            }
+
+
+        })
+        $('.fxq-biaobiao').click(function() {
+
+            $('body , html').stop().animate({
+                scrollTop: 750
+            })
+        })
+    </script>
+</body>
+
+</html>

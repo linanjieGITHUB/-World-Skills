@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界技能大赛</title>
+    <!-- 安杰 （全是） -->
+    <link rel="stylesheet" href="./css/base.css">
+    <!-- <link rel="stylesheet" href="./小图标/font_3tbi5i1033r/iconfont.css"> -->
+    <link rel="stylesheet" href="./小图标/aj/font_3tbi5i1033r/iconfont.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <link rel="icon" href="./image/logo.jpg">
+
+    <script src="./js/index.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- 鑫桥 -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <script src="js/classie.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="./bootstrap/js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <!-- 滑动 -->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/jQuery.min.js"></script>
+    <script src="./js/animate缓慢动画.js"></script>
+    <!-- 轮播图 -->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+
+    <!-- plugin stylesheet -->
+    <link rel="stylesheet" href="css/jquery.mThumbnailScroller.css">
+    <!-- 轮播图 -->
+
+    <!-- 文超 -->
+
+    <style>
+        .content {
+            overflow: auto;
+            position: relative;
+            padding: 10px;
+            background-color: #333;
+            margin: 20px;
+            width: 50%;
+            height: auto;
+        }
+        
+        .content li {
+            margin: 4px;
+            overflow: hidden;
+        }
+        
+        .content li a {
+            display: inline-block;
+            border: 7px solid rgba(255, 255, 255, .1);
+        }
+        
+        .content.light,
+        .content.light .mTSButton {
+            background-color: #c2beb2;
+        }
+        
+        .content.light li a {
+            border: 7px solid rgba(255, 255, 255, .4);
+        }
+        
+        #content-1,
+        #content-2 {
+            width: auto;
+            height: 600px;
+        }
+        
+        #content-1 ul li:first-child {
+            margin-top: 20px;
+        }
+        
+        #content-1 ul li:last-child {
+            margin-bottom: 20px;
+        }
+        
+        #content-2 {
+            padding: 55px 10px;
+        }
+        
+        #content-3 .mTSButton {
+            background-color: #333;
+        }
+        
+        #content-5 {
+            background-color: #444;
+        }
+        
+        #content-6 {
+            background-color: transparent;
+        }
+        
+        #content-6 .mTSButton {
+            background-color: rgba(0, 0, 0, .7);
+            -moz-border-radius: 48px;
+            -webkit-border-radius: 48px;
+            border-radius: 48px;
+        }
+        
+        #content-6 .mTSButtonLeft {
+            left: 5px;
+        }
+        
+        #content-6 .mTSButtonRight {
+            right: 5px;
+        }
+        
+        .content {
+            width: 97%;
+        }
+        /* 版权 */
+        
+        .aj1copyright {
+            width: 100%;
+            background-color: #0F111D;
+            height: 150px;
+            padding: 40px 0px;
+        }
+        
+        .aj1copyright p {
+            display: block;
+            font-size: 15px;
+            text-align: center;
+            color: #787278;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="aj_bg4">
+        <img src="./image/logo.jpg" class="aj_bgimg">
+    </div>
+
+    <!-- 导航条 -->
+    <nav class="navbar navbar-default menu menu--iris">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <a class="navbar-brand" href="#"><img src="./image/img/圆2.png" alt="" height="100" class="logo"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav menu__list">
+
+                    <li>
+                        <li class="menu__item menu__item--current fxq-zy"><a href="#" class="menu__link">主页</a></li>
+                    </li>
+                    <li class="menu__item fxq-gy"><a href="#" class="menu__link">关于世锦赛</a></li>
+                    <li class="menu__item fxq-jbs"><a href="#" class="menu__link">锦标赛项目</a></li>
+                    <li class="menu__item fxq-ry"><a href="#" class="menu__link">人物风采故事</a></li>
+
+                </ul>
+
+                <script>
+                    (function() {
+                        [].slice.call(document.querySelectorAll('.menu')).forEach(function(menu) {
+                            var menuItems = menu.querySelectorAll('.menu__link'),
+                                setCurrent = function(ev) {
+                                    ev.preventDefault();
+
+                                    var item = ev.target.parentNode; // li
+
+                                    // return if already current
+                                    if (classie.has(item, 'menu__item--current')) {
+                                        return false;
+                                    }
+                                    // remove current
+                                    classie.remove(menu.querySelector('.menu__item--current'), 'menu__item--current');
+                                    // set current
+                                    classie.add(item, 'menu__item--current');
+                                };
+
+                            [].slice.call(menuItems).forEach(function(el) {
+                                el.addEventListener('click', setCurrent);
+                            });
+                        });
+
+                        [].slice.call(document.querySelectorAll('.link-copy')).forEach(function(link) {
+                            link.setAttribute('data-clipboard-text', location.protocol + '//' + location.host + location.pathname + '#' + link.parentNode.id);
+                            new Clipboard(link);
+                            link.addEventListener('click', function() {
+                                classie.add(link, 'link-copy--animate');
+                                setTimeout(function() {
+                                    classie.remove(link, 'link-copy--animate');
+                                }, 300);
+                            });
+                        });
+                    })(window);
+                </script>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="menu-item current-menu-item">
+                        <a href="#">
+                首页
+              </a>
+                        <div class="wee"></div>
+
+                    </li>
+                    <li class="menu-item"><a href="./index/副业面.html" target="_blank">学习攻略</a></li>
+                    <li class="dropdown menu-item click-move">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">登录/注册</a>
+                    </li>
+                </ul>
+                <script>
+                    $(document).ready(function() {
+                        // cool nav menu
+                        $(window).on('load resize', function() {
+                            var $thisnav = $('.current-menu-item').offset().left;
+                            $('.menu-item').hover(function() {
+                                var $left = $(this).offset().left - $thisnav;
+                                var $width = $(this).outerWidth();
+                                var $start = 0;
+                                $('.wee').css({
+                                    'left': $left,
+                                    'width': $width
+                                });
+                            }, function() {
+                                var $initwidth = $('.current-menu-item').width();
+                                $('.wee').css({
+                                    'left': '0',
+                                    'width': $initwidth
+                                });
+                            });
+                        });
+
+                    });
+                </script>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!-- 导航栏滚动效果 -->
+    <!-- 模拟框 -->
+    <div class="fxq-occ">
+    </div>
+    <div class="fxq-fac">
+        <h3 style="font-weight:600 ;">会员登录</h3>
+        <span class="fxq-xx"><span class="glyphicon glyphicon-remove"></span></span>
+        <hr>
+        <div class="fxq-alr">
+            <h5 style="font-weight:600 ;">已注册过用户</h5>
+            <img src="./image/img/wx2.png" alt="" height="40" class="fxq-alr-img">
+            <input type="button" value="微信登录" class="fxq-alr-ipt">
+            <div style="text-align:center ;width: 100%; margin: 15px 0px; font-weight: 600;">或</div>
+            <div style="font-size:10px ;font-weight: 700; margin: 5px 0px;"><span style="color:rgb(255, 0, 0) ;">*</span>用户名（手机号/电子邮箱密码）</div>
+            <input type="text" style="width:100% ;height: 40px;border: 1px rgb(194, 194, 194) solid; border-radius: 5px;">
+            <div style="font-size:10px ;font-weight: 700; margin: 10px 5px 0px 0px;"><span style="color:rgb(255, 0, 0) ;">*</span>密码</div>
+            <input type="text" style="width:100% ;height: 40px;border: 1px rgb(194, 194, 194) solid; border-radius: 5px;" class="fxq-air-pass">
+            <span class="fxq-ice"><span class="glyphicon glyphicon-eye-open"></span></span>
+            <div class="fxq-jg" style="width: 100%;height: 25px;margin-top: 5px;border: 1px #333 solid;line-height: 25px;text-align: center; color: aliceblue;font-weight: 600;">密码要在于6~12个字符之间</div>
+            <a style="border-bottom:1px solid #333 ;width: 60px; font-size: 10px;margin-top: 5px;">忘记密码？</a>
+            <input type="button" value="登录" class="fxq-alr-ipt2">
+            <hr>
+            <h5 style="font-weight:600 ;">没有注册过账号？注册后你可以</h5>
+            <ul style="list-style: none; font-size: 10px;font-weight: 600;">
+                <li>查看您的观看记录</li>
+                <li>管理您的个人信息</li>
+                <li>问你想问的一切</li>
+            </ul>
+            <div class="fxq-none">
+                <div class="fxq-zc">
+                    <h3 style="font-weight:600 ;text-align: center;">注册新用户</h3>
+                    <span class="fxq-xx2"><span class="glyphicon glyphicon-remove"></span></span>
+                    <hr>
+                    <div style="font-size:10px ;font-weight: 700; margin: 5px 0px;"><span style="color:rgb(255, 0, 0) ;">*</span>用户名（手机号/电子邮箱密码）</div>
+                    <input type="text" style="width:100% ;height: 40px;border: 1px rgb(194, 194, 194) solid; border-radius: 5px;">
+                    <div style="font-size:10px ;font-weight: 700; margin: 10px 5px 0px 0px;"><span style="color:rgb(255, 0, 0) ;">*</span>密码</div>
+                    <input type="text" style="width:100% ;height: 40px;border: 1px rgb(194, 194, 194) solid; border-radius: 5px;" class="fxq-air-pass">
+                    <span class="fxq-ice2"><span class="glyphicon glyphicon-eye-open"></span></span>
+                    <div style="font-size:10px ;font-weight: 700; margin: 10px 5px 0px 0px;"><span style="color:rgb(255, 0, 0) ;">*</span>验证码</div>
+                    <input type="text" style="width:50% ;height: 40px;" class="fxq-air-pass">
+                    <input type="button" value="获得验证码" style="width:30% ;height: 40px;" class="fxq-air-yzm">
+                    <input type="button" value="确定注册" class="fxq-alr-ipt2">
+                </div>
+            </div>
+            <input type="button" value="注册" class="fxq-alr-ipt3">
+        </div>
+    </div>
+    <script>
+        var boxleft = $('.fxq-fac').offset().left;
+        // 拉抽
+        $('.click-move').click(function() {
+
+            $('.fxq-fac').animate({
+                left: boxleft - 400,
+                opacity: 1,
+            })
+            $('.fxq-occ').css('display', 'block')
+        })
+        $('.fxq-xx').click(function() {
+            $('.fxq-fac').animate({
+                left: boxleft + 400,
+                opacity: 0,
+            }, 300)
+            $('.fxq-occ').css('display', 'none')
+            $('.fxq-zc').animate({
+                top: zctop + 900,
+            }, 300)
+            $('.fxq-none').css('display', 'none')
+        })
+
+
+        var zctop = $('.fxq-zc').offset().top;
+
+        $('.fxq-alr-ipt3').click(function() {
+
+            $('.fxq-none').css('display', 'block')
+            $('.fxq-zc').animate({
+                top: zctop + 120,
+            }, 300)
+
+        })
+
+        $('.fxq-xx2').click(function() {
+            $('.fxq-none').css('display', 'none')
+            $('.fxq-zc').animate({
+                top: zctop + 900,
+            }, 300)
+
+        })
+
+        // 切换
+        var fxq = 0;
+        var inp = document.querySelectorAll('.fxq-air-pass')
+        $('.fxq-ice,.fxq-ice2').click(function() {
+            if (fxq == 0) {
+                $('.glyphicon-eye-open').addClass('glyphicon-eye-close').removeClass('glyphicon-eye-open')
+                inp[1].type = 'password';
+                inp[0].type = 'password';
+                fxq = 1
+            } else {
+                $('.glyphicon-eye-close').addClass('glyphicon-eye-open').removeClass('glyphicon-eye-close')
+                inp[1].type = 'text';
+                inp[0].type = 'text';
+                fxq = 0
+            }
+        })
+
+        // 警告框
+    </script>
+
+
+    <!-- <!-头部中部 -->
+    <div class="header-banner">
+        <!-- 运动区域 -->
+        <div class="banner">
+            <div class="banner-left">
+                <span class="banner-text-1">
+    <span class="text_1">世锦赛 / 技能节</span>
+                <br>
+                <br>
+                <span class="text_2">SKILL</span>
+                <br>
+                <span class="text_2">Championships</span>
+                <br>
+                <span class="text_2">RACE.</span>
+                <br>
+                <br>
+                <span class="text_3">世界技能大赛的竞技水平代表了国际职业技能发展的先进水平</span>
+                <br>
+                <span class="text_3">是世界技能组织成员展示和交流职业技能的重要平台.</span>
+                <img src="./image/img/圆2.png" alt="" class="text-img">
+                <span class="text_4">12</span>
+                </span>
+            </div>
+            <div class="banner-right">
+
+            </div>
+        </div>
+        <script>
+            var banner = document.querySelector('.header-banner')
+            var text1 = document.querySelector('.banner-text-1')
+            textonw = text1.offsetLeft
+            textonwtop = text1.offsetTop
+            console.log(text1.offsetTop);
+
+            banner.addEventListener('mousemove', function(e) {
+                var x = e.pageX - this.offsetLeft
+                var y = e.pageY - this.offsetTop
+                text1.style.left = textonw - x / 10 + 'px'
+                text1.style.top = textonwtop - y / 10 + 'px'
+            });
+        </script>
+    </div>
+
+
+    <!--  安杰 ---- 关于世界技能大赛 -->
+
+    <div class="bg">
+        <a href="./subpage.html" title="点击查看更多" style="text-decoration: none;">
+            <div class="aj_bar">
+                <div class="w">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col_Text" style="padding: 0;">
+                            <div class="Text_area">
+
+                                <h1>关于世界技能大赛</h1>
+                                <span>—</span>
+                                <p>
+                                    世界技能大赛由世界技能组织举办，被誉为"技能奥林匹克"，是世界技能组织成员展示和交流职业技能的重要平台。 截至2013年第42届世界技能大赛，世界技能大赛比赛项目共分为6个大类，分别为结构与建筑技术、创意艺术和时尚、信息与通信技术、制造与工程技术、社会与个人服务、运输与物流，共计46个竞赛项目.
+                                </p>
+                                <a title="点击查看更多" href="./subpage.html" class="iconfont aja">&#xe666;</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="picture_area">
+                                <a href="./subpage.html" title="点击查看更多">
+
+                                    <img src="./image/1.jpg" alt=""></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="bg2">
+        <a href="./subpage.html" title="点击查看更多" style="text-decoration: none;">
+            <div class="aj_bar2">
+                <div class="w">
+                    <div class="row">
+                        <div class="col-md-7 col-sm-12 col_left" style="padding: 0;">
+                            <div class="left_area">
+                                <h2>技能节 展才艺</h2>
+                                <p>
+                                    技能大赛是我国目前各个行业中职业技能水平发展成果的展示；举办的意义在于参赛者们施展技能的舞台，也是和大家进行学习和交流的平台。可以充分地展示出个人所具有的职业技能水平.
+                                </p>
+                                <a href="./subpage.html" class="iconfont aja2">&#xe666;</a>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-12" style="padding: 0;">
+                            <div class="right_area">
+                                <span>Show skills talents.</span>
+                                <!-- <span>5</span> -->
+                                <p>Our powerful</p>
+                                <div class="forMargin"></div>
+                                <div class="picture_area2">
+                                    <img src="./image/子模块.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- 世界技能锦标赛项目 -->
+    <div class="fxq-project">
+        <div class="container">
+            <!-- 标题 -->
+            <div class="row center project1">
+                <div class="col-md-12 col-xs-12 fxq-project-H">
+                    <p class="project-h1" style="background-image:url(./image/img/半透明字体.png);background-size: 500px;background-repeat: no-repeat; background-position: 50% 100%;">
+                        世界技能锦标赛项目
+                        <p class="wwwe"></p>
+                    </p>
+
+                </div>
+            </div>
+            <!-- 第一行 -->
+            <div class="row project2 center">
+                <div class="col-md-4 col-xs-12" style="margin-bottom :50px ;">
+                    <div class="project-The" style="background-image:url(./image/image/pexels-anamul-rezwan-1216589.jpg) ; background-position: 55%;">
+                        <span class="project-The-P">结构与建筑技术</span>
+                        <div class="project-text">
+                            <p class="project-text-p">砌筑、家具制作、木工、混泥土建筑、电器装置、精细木工、 园艺、油漆与装饰、抹灰与隔墙系统、管道制暖、制冷空调、瓷砖贴面、建筑信息建模
+
+                            </p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="col-md-4 col-xs-12" style="margin-bottom :50px ;">
+                    <div class="project-The" style="background-image:url(./image/image/pexels-anna-tarazevich-5963181.jpg) ; background-position: 55%;">
+                        <span class="project-The-P">创意艺术和时尚</span>
+                        <div class="project-text">
+                            <p class="project-text-p">
+                                时装技术、花艺、平面设计技术、珠宝加工、商品展示技术、3D数字游戏艺术
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4 col-xs-12" style="margin-bottom :50px ;">
+                    <div class="project-The" style="background-image:url(./image/image/微信图片_20221110113827.jpg) ; background-position: 55%;">
+                        <span class="project-The-P">信息与通讯技术</span>
+                        <div class="project-text">
+                            <p class="project-text-p">
+                                信息网络布线、网络系统管理、商务软件解决方案、印刷媒体技术、网站设计与开发、云计算、网络安全、移动应用开发
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- 第二行 -->
+            <div class="row project2 center">
+                <div class="col-md-4 col-xs-12" style="margin-bottom :50px ;">
+                    <div class="project-The" style="background-image:url(./image/image/pexels-chevanon-photography-1108101.jpg) ; background-position: 55%;">
+                        <span class="project-The-P">制造与工程技术</span>
+                        <div class="project-text">
+                            <p class="project-text-p">
+                                研究如何将基础学科和技术学科
+                                <br> 转化为专业生产技术
+                            </p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="col-md-4 col-xs-12" style="margin-bottom :50px ;">
+                    <div class="project-The" style="background-image:url(./image/img/l7.jpg) ; background-position: 55%;">
+                        <span class="project-The-P">社会与个人服务</span>
+                        <div class="project-text">
+                            <p class="project-text-p">
+                                社会 利益 是个人利益的基础，社会利益
+                                <br> 与个人利益从总体上说是一致的
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4 col-xs-12" style="margin-bottom :50px ;">
+                    <div class="project-The" style="background-image:url(./image/image/photo-1559297434-fae8a1916a79.webp) ; background-position: 55%;">
+                        <span class="project-The-P">运输与物流</span>
+                        <div class="project-text">
+                            <p class="project-text-p">
+                                飞机维修、车身修理、汽车技术、汽车喷漆、重型车辆维修、货运代理、轨道车辆技术
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--   鑫桥    中间自动轮波 -->
+    <div class="container center" style="padding-top: 20px;">
+        <div class="row project00">
+            <div class="col-md-12 col-xs-12 fxq-project-H">
+                <p class="project-h1" style="background-image:url(./image/img/回顾.png);background-size: 900px;background-repeat: no-repeat; background-position: 50% 100%;">
+                    <!-- <p class="fxq-pp">回顾</p> -->
+                    回顾
+                    <p class="wwwe"></p>
+                </p>
+            </div>
+        </div>
+        <!-- 鼠标放上左右划  -->
+        <div class="row">
+            <div class="col-md-12 project00-dir">
+                <!--左 -->
+                <div class="fxq-left" style="float:left ;">鼠标放上左移动</div>
+                <div class="fxq-right" style="float: right;">鼠标放上右移动</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12" style="padding:0px ;">
+                <div id="content-4" class="content light">
+                    <ul>
+                        <li>
+                            <a href="#"><img src="./image/img/l1.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l2.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l3.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l4.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l5.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l6.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l7.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l8.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l9.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l10.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l11.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l12.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l13.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l14.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l15.jpg" /></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="content-1" class="content">
+                    <ul>
+                        <li>
+                            <a href="#"><img src="./image/img/l1.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l2.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l3.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l4.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l5.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l6.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l7.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l8.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l9.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l10.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l11.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l12.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l13.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l14.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./image/img/l15.jpg" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="../js/minified/jquery-1.11.0.min.js"><\/script>')
+    </script>
+    <script src="js/jquery.mThumbnailScroller.js"></script>
+    <script>
+        (function($) {
+            $(window).load(function() {
+
+                $("#content-1").mThumbnailScroller({
+                    axis: "y",
+                    type: "hover-precise"
+                });
+
+                $("#content-2").mThumbnailScroller({
+                    axis: "y",
+                    type: "click-thumb",
+                    theme: "buttons-out"
+                });
+
+                $("#content-3").mThumbnailScroller({
+                    type: "click-50",
+                    theme: "buttons-in"
+                });
+
+                $("#content-4").mThumbnailScroller({
+                    theme: "hover-classic"
+                });
+
+                $("#content-5").mThumbnailScroller({
+                    type: "hover-precise"
+                });
+
+                $("#content-6").mThumbnailScroller({
+                    type: "click-25",
+                });
+
+            });
+        })(jQuery);
+    </script>
+
+    <div class="bg3">
+        <div class="aj_bar3">
+            <div class="w">
+                <div class="Text_area3">
+                    <h1>人物风采故事</h1>
+                    <span>——</span>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col_Text3" style="padding: 0;margin: 0;">
+                        <div class="picture_wrapper">
+                            <ul>
+                                <li><a href="./副业.html">桥桥</a></li>
+                                <li>
+                                    <a href="./副业.html"><img src="./image/人物替1.jpg" alt=""></a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="picture_content">
+                            <h4><a href="./副业.html">还有哪一些网页呢？</a></h4>
+                            <p>我们的个人网页，这里有我们的自己的介绍，有一个很帅很帅的帅哥，这个帅哥应该是个帅哥，帅哥一般都是帅哥，帅哥一般都是长得挺帅的帅哥，那就是没有错了，就是一个帅哥，帅哥要是再帅一点就是大帅哥，没有那么帅就是小帅哥，很明显我是大帅哥
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 col_Text3" style="padding: 0;margin: 0;">
+                        <div class="picture_wrapper">
+                            <ul>
+                                <li><a href="./副业.html">桥桥</a></li>
+                                <li>
+                                    <a href="./副业.html"><img src="./image/人物替1.jpg" alt=""></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="picture_content">
+                            <h4><a href="./副业.html">还有哪一些网页呢？</a></h4>
+                            <p>我们的个人网页，这里有我们的自己的介绍，有一个很帅很帅的帅哥，这个帅哥应该是个帅哥，帅哥一般都是帅哥，帅哥一般都是长得挺帅的帅哥，那就是没有错了，就是一个帅哥，帅哥要是再帅一点就是大帅哥，没有那么帅就是小帅哥，很明显我是大帅哥
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 col_Text3" style="padding: 0;margin: 0;">
+                        <div class="picture_wrapper">
+                            <ul>
+                                <li><a href="./副业.html">桥桥</a></li>
+                                <li>
+                                    <a href="./副业.html"><img src="./image/人物替1.jpg" alt=""></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="picture_content">
+                            <h4><a href="./副业.html">还有哪一些网页呢？</a></h4>
+                            <p>我们的个人网页，这里有我们的自己的介绍，有一个很帅很帅的帅哥，这个帅哥应该是个帅哥，帅哥一般都是帅哥，帅哥一般都是长得挺帅的帅哥，那就是没有错了，就是一个帅哥，帅哥要是再帅一点就是大帅哥，没有那么帅就是小帅哥，很明显我是大帅哥
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 col_Text3" style="padding: 0;margin: 0;">
+                        <div class="picture_wrapper">
+                            <ul>
+                                <li><a href="./副业.html">桥桥</a></li>
+                                <li>
+                                    <a href="./副业.html"><img src="./image/人物替1.jpg" alt=""></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="picture_content">
+                            <h4><a href="./副业.html">还有哪一些网页呢？</a></h4>
+                            <p>我们的个人网页，这里有我们的自己的介绍，有一个很帅很帅的帅哥，这个帅哥应该是个帅哥，帅哥一般都是帅哥，帅哥一般都是长得挺帅的帅哥，那就是没有错了，就是一个帅哥，帅哥要是再帅一点就是大帅哥，没有那么帅就是小帅哥，很明显我是大帅哥
+                            </p>
+                        </div>
+                    </div>
+                    <div class="open">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col_Text3" style="padding: 0;margin: 0;">
+                            <div class="picture_wrapper">
+                                <ul>
+                                    <li><a href="./副业.html">桥桥</a></li>
+                                    <li>
+                                        <a href="./副业.html"><img src="./image/人物替1.jpg" alt=""></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="picture_content">
+                                <h4><a href="./副业.html">还有哪一些网页呢？</a></h4>
+                                <p>我们的个人网页，这里有我们的自己的介绍，有一个很帅很帅的帅哥，这个帅哥应该是个帅哥，帅哥一般都是帅哥，帅哥一般都是长得挺帅的帅哥，那就是没有错了，就是一个帅哥，帅哥要是再帅一点就是大帅哥，没有那么帅就是小帅哥，很明显我是大帅哥
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 col_Text3" style="padding: 0;margin: 0;">
+                            <div class="picture_wrapper">
+                                <ul>
+                                    <li><a href="./副业.html">桥桥</a></li>
+                                    <li>
+                                        <a href="./副业.html"><img src="./image/人物替1.jpg" alt=""></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="picture_content">
+                                <h4><a href="./副业.html">还有哪一些网页呢？</a></h4>
+                                <p>我们的个人网页，这里有我们的自己的介绍，有一个很帅很帅的帅哥，这个帅哥应该是个帅哥，帅哥一般都是帅哥，帅哥一般都是长得挺帅的帅哥，那就是没有错了，就是一个帅哥，帅哥要是再帅一点就是大帅哥，没有那么帅就是小帅哥，很明显我是大帅哥
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="open_btnbar">
+                    <a class="open_btn iconfont">展开 &#xe65e;</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- 版权 -->
+    <div class="aj1copyright">
+        <p>│制作人：文超，鑫桥，安杰，泳儒</p>
+        <p>│©版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+        <p>│地址：广东省高新技术高级技工学校&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系电话：189-7465-3747</p>
+    </div>
+    <!-- 滑动页面 -->
+    <script>
+        $('.navbar a').stop().css('color', 'rgb(255, 255, 255)');
+
+        $(window).scroll(function() {
+
+            var winTop = $(document).scrollTop()
+            $('.navbar').css('top', winTop + 'px')
+            if (winTop == 0) {
+                $('.navbar').stop().css('background-color', 'rgba(136, 136, 136, 0)')
+                $('.navbar a').stop().css('color', 'rgb(255, 255, 255)');
+
+            } else {
+                $('.navbar').stop().css('background-color', 'rgba(106, 106, 106, 0.8)')
+                $('.navbar a').stop().css('color', 'rgb(255, 255, 255)');
+            }
+
+
+        });
+    </script>
+    <script>
+        $(function() {
+            var wintop = $(window).scrollTop()
+                // 去到关于世径赛v
+            var Gytop = $('.aj_bar').offset().top
+            $('.fxq-gy').click(function() {
+                $('body,html').stop().animate({
+                    scrollTop: Gytop - 200,
+                });
+            });
+            //  去到世界锦标赛
+
+            var JBSTop = $('.fxq-project').offset().top;
+            $('.fxq-jbs').click(function() {
+                $('body,html').stop().animate({
+                    scrollTop: JBSTop - 100,
+                });
+            });
+            // 去到人物故事
+            var RwTop = $('.Text_area3').offset().top;
+            $('.fxq-ry').click(function() {
+                $('body,html').stop().animate({
+                    scrollTop: RwTop,
+                });
+            });
+            // 回到首页
+            $('.fxq-zy').click(function() {
+                $('body,html').stop().animate({
+                    scrollTop: 0,
+                });
+            });
+
+
+            // 导航栏选中
+            $(window).scroll(function() {
+                var wintop = $(window).scrollTop()
+                if (wintop <= 600) {
+                    $('.fxq-zy').addClass('menu__item--current').siblings().removeClass('menu__item--current')
+                } else if (wintop >= 600) {
+                    $('.fxq-gy').addClass('menu__item--current').siblings().removeClass('menu__item--current')
+                }
+                if (wintop >= 2600) {
+                    $('.fxq-jbs').addClass('menu__item--current').siblings().removeClass('menu__item--current')
+                }
+                if (wintop >= 4300) {
+                    $('.fxq-ry').addClass('menu__item--current').siblings().removeClass('menu__item--current')
+                }
+            })
+        })
+    </script>
+    <div class="ajsidebar">
+        <ul>
+            <li class="ajside1">
+                <a href="javascript:;"><img src="./image/image/对话.png">互动交流</a>
+            </li>
+            <li class="ajside2">
+                <a href="javascript:;" title="666"><img src="./image/image/文章.png" alt="" style="width: 18px;">报名世赛</a>
+            </li>
+            <div class="ajside">
+                <a href="javascript:;"><img src="./image/image/回到顶部.png" alt="">返回顶部</a>
+            </div>
+        </ul>
+    </div>
+</body>
+
+</html>
